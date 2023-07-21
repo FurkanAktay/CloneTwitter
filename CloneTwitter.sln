@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloneTwitter", "CloneTwitter\CloneTwitter.csproj", "{7543CA67-52F4-42FE-9729-6A4996CF8B0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloneTwitterEntity", "CloneTwitterEntity\CloneTwitterEntity.csproj", "{D58D152D-59EE-4964-8853-EAFFB91486B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloneTwitter.web", "CloneTwitter.web\CloneTwitter.web.csproj", "{92AA8C6F-1861-4C72-ADCF-6B303A4DF07B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7543CA67-52F4-42FE-9729-6A4996CF8B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7543CA67-52F4-42FE-9729-6A4996CF8B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7543CA67-52F4-42FE-9729-6A4996CF8B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7543CA67-52F4-42FE-9729-6A4996CF8B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D58D152D-59EE-4964-8853-EAFFB91486B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D58D152D-59EE-4964-8853-EAFFB91486B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D58D152D-59EE-4964-8853-EAFFB91486B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D58D152D-59EE-4964-8853-EAFFB91486B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92AA8C6F-1861-4C72-ADCF-6B303A4DF07B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92AA8C6F-1861-4C72-ADCF-6B303A4DF07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92AA8C6F-1861-4C72-ADCF-6B303A4DF07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92AA8C6F-1861-4C72-ADCF-6B303A4DF07B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C4FDFEC-7D71-4F0B-B5A3-289DB15DBDA2}
+	EndGlobalSection
+EndGlobal
