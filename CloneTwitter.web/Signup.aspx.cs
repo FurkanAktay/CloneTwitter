@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Optimization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -31,10 +32,15 @@ namespace CloneTwitter.web
 
             if(usResponse.Response == Enumaration.GeneralEnumarations.Response.error)
             {
-                errortxtbox.Visible = true;
-                errortxtbox.Text = string.Join(" , " ,usResponse.Notifications.Select(p=>p.Message).ToList());
-                
+                //errortxtbox.Visible = true;
+                string error = string.Join(" , ", usResponse.Notifications.Select(p => p.Message).ToList());
+                //errortxtbox.Text = string.Join(" , \n" ,usResponse.Notifications.Select(p=>p.Message).ToList());
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "msgbox", "showMessageBox('"+ error + "')", true);
+
+                //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + errortxtbox.Text + "');", true);
+
             }
+            
         }
     }
 }

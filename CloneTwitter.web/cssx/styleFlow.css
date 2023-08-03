@@ -151,26 +151,42 @@ body {
   height: 40px;
   margin-top: 20px;
   margin-left: auto;
+
+  float:right;
+  margin-right:15px;
 }
 
 .tweetBox__attachButton {
-    background-color: #808080;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6ecf0;
     border: none;
     color: #808080;
     font-weight: 900;
-
     border-radius: 30px;
     width: 40px;
     height: 40px;
     margin-top: 20px;
-    margin-left: auto;
+    margin-left: 15px;
 }
+
+.tweetbox__attachLink {
+    float:inline-start;
+    display: flex;
+    align-items: center;
+    min-width : 250px;
+    border : none;
+}
+
+
 
 
 /* post */
 .post__avatar img {
-  border-radius: 50%;
-  height: 40px;
+    border-radius: 50%;
+    height: 40px;
 }
 
 .post {
@@ -190,6 +206,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  align-items:center ; 
 }
 
 .post__badge {
@@ -200,18 +217,25 @@ body {
 
 .post__headerSpecial {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 16px;
   color: gray;
 }
 
 .post__headerText h3 {
-  font-size: 15px;
+  font-size: 18px;
   margin-bottom: 5px;
 }
 
 .post__headerDescription {
-  margin-bottom: 10px;
-  font-size: 15px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    flex: 1;
+    padding: 10px;
+    
+}
+
+.post__headerDescription .post__content{
+    max-width:500px;
 }
 
 .post__body {
@@ -221,18 +245,6 @@ body {
 
 .post__avatar {
   padding: 20px;
-}
-
-.post__image{
-    height: 500px; 
-
-}
-
-.table {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
-    border-collapse: collapse;
 }
 
 

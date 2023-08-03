@@ -63,7 +63,28 @@ namespace CloneTwitterEntity
 
         }
 
-       
-        
+
+        public static void UserPersImgAdd(USERPERS tbluserpersimg)
+        {
+            using (COTContext Veri = new COTContext())
+            {
+
+                USERPERS yeniKullaniciMedia = new USERPERS
+                {
+                    UserID = tbluserpersimg.UserID,
+                    ProfilePic = tbluserpersimg.ProfilePic,
+                    ProfileBgPic = tbluserpersimg.ProfileBgPic,
+                    ProfileBio = tbluserpersimg.ProfileBio
+                };
+                Veri.USERPERSS.Add(yeniKullaniciMedia);
+                Veri.SaveChanges();
+                tbluserpersimg.UserPersId = yeniKullaniciMedia.UserPersId;
+
+
+            }
+
+        }
+
+
     }
 }

@@ -1,0 +1,366 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --twitter-color: #50b7f5;
+    --twitter-background: #e6ecf0;
+}
+
+.sidebarOption {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+    .sidebarOption .material-icons,
+    .fa-twitter {
+        padding: 20px;
+    }
+
+    .sidebarOption h2 {
+        font-weight: 800;
+        font-size: 20px;
+        margin-right: 20px;
+    }
+
+    .sidebarOption:hover {
+        background-color: var(--twitter-background);
+        border-radius: 30px;
+        color: var(--twitter-color);
+        transition: color 100ms ease-out;
+    }
+
+.home:hover {
+    background-color: var(--twitter-background);
+    border-radius: 30px;
+    color: var(--twitter-color);
+    transition: color 100ms ease-out;
+}
+
+.sidebarOption.active {
+    color: var(--twitter-color);
+}
+
+.sidebar__tweet {
+    width: 100%;
+    background-color: var(--twitter-color);
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+}
+
+.sidebar {
+    border-right: 1px solid var(--twitter-background);
+    flex: 0.2;
+    min-width: 250px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.fa-twitter {
+    color: var(--twitter-color);
+    font-size: 30px;
+}
+
+/* feed */
+.feed {
+    flex: 0.5;
+    border-right: 1px solid var(--twitter-background);
+    min-width: fit-content;
+    overflow-y: scroll;
+}
+
+.feed__header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid var(--twitter-background);
+    padding: 15px 20px;
+}
+
+    .feed__header h2 {
+        font-size: 20px;
+        font-weight: 800;
+    }
+
+.feed::-webkit-scrollbar {
+    display: none;
+}
+
+.feed {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* tweet box */
+.tweetbox__input img {
+    border-radius: 50%;
+    height: 40px;
+}
+
+.tweetBox {
+    padding-bottom: 10px;
+    border-bottom: 8px solid var(--twitter-background);
+    padding-right: 10px;
+}
+
+    .tweetBox form {
+        display: flex;
+        flex-direction: column;
+    }
+
+.tweetbox__input {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5lIw4FZ_UL38X85GgNDRTpGCNjYjsFg_XYA&usqp=CAU");
+    display: flex;
+    padding: 20px;
+    min-height: 250px;
+}
+
+    .tweetbox__input input {
+        flex: 1;
+        margin-left: 20px;
+        font-size: 20px;
+        border: none;
+        outline: none;
+    }
+
+.tweetBox__tweetButton {
+    background-color: var(--twitter-color);
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: auto;
+    float: right;
+    margin-right: 15px;
+}
+
+.profileBox__imageButton {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #50b7f5;
+    border: none;
+    color: #808080;
+    font-weight: 900;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.add_photo {
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.tweetbox__attachLink {
+    float: inline-start;
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    border: none;
+}
+
+.Namelbl {
+    float: left;
+    font-size: x-large;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.Usernamelbl {
+    padding-left: 20px;
+    float: left;
+    font-size: large;
+    font-weight: bolder;
+    color: #272525;
+}
+
+
+
+/* post */
+.post__avatar img {
+    border-radius: 50%;
+    height: 40px;
+}
+
+.post {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--twitter-background);
+    padding-bottom: 10px;
+}
+
+.post__body img {
+    width: 450px;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.post__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.post__badge {
+    font-size: 14px !important;
+    color: var(--twitter-color);
+    margin-right: 5px;
+}
+
+.post__headerSpecial {
+    font-weight: 600;
+    font-size: 16px;
+    color: gray;
+}
+
+.post__headerText h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.post__headerDescription {
+    margin-bottom: 10px;
+    font-size: 15px;
+    flex: 1;
+    padding: 10px;
+}
+
+    .post__headerDescription .post__content {
+        max-width: 500px;
+    }
+
+.post__body {
+    flex: 1;
+    padding: 10px;
+}
+
+.post__avatar {
+    padding: 20px;
+}
+
+
+
+/* widgets */
+.widgets {
+    flex: 0.3;
+}
+
+.widgets__input {
+    display: flex;
+    align-items: center;
+    background-color: var(--twitter-background);
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+    .widgets__input input {
+        border: none;
+        background-color: var(--twitter-background);
+    }
+
+.widgets__searchIcon {
+    color: gray;
+}
+
+.widgets__widgetContainer {
+    margin-top: 15px;
+    margin-left: 20px;
+    padding: 20px;
+    background-color: #f5f8fa;
+    border-radius: 20px;
+}
+
+.widgets__profContainer {
+    margin-top: 15px;
+    margin-left: 20px;
+    padding: 20px;
+    background-color: #f5f8fa;
+    border-radius: 20px;
+}
+
+
+.widgets__profSettings {
+    margin-top: 15px;
+    margin-left: 20px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+    .widgets__profSettings h2 {
+        margin-top: 30px;
+    }
+
+
+
+    .widgets__widgetContainer h2 {
+        font-size: 18px;
+        font-weight: 800;
+    }
+
+.newPpUrl {
+    float: left;
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+    border: none;
+    margin-top: 5px;
+    margin-bottom 20px;
+}
+
+.newbgPhotoUrl {
+    float: left;
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+    border: none;
+    margin-top: 5px;
+    margin-bottom 20px;
+}
+
+.newbgText {
+    float: left;
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+    border: none;
+    margin-top: 5px;
+    margin-bottom 20px;
+}
+
+.savebtn{
+    margin-top:30px;
+    background-color: #808080;
+    border:none;
+}

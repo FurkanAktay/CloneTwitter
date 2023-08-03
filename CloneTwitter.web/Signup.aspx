@@ -13,9 +13,33 @@
     <title>Signup to Twitter / Twitter</title>
 
     <!-- custom css link -->
-    <link href="css/styleSignup.css" rel="stylesheet" />
+    <link href="cssx/styleSignup.css" rel="stylesheet" />
     <!-- boxicons cdn link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"/>
+
+
+    <!-- message box -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>    
+        function showMessageBox(message) {
+
+            alert(message);
+                
+                //$("#dialog-message").dialog({
+                //    modal: true,
+                //    buttons: {
+                //        Ok: function () {
+                //            $(this).dialog("close");
+                //        }
+                //    }
+                //});
+        }
+    </script>
+
+
 
 </head>
 
@@ -31,8 +55,8 @@
                 Create your account
             </h2>
             
-            <asp:Label CssClass="errorhandling" id="errortxtbox" runat="server" visible="false"/>  
-            <br />
+            <%--<asp:Label CssClass="errorhandling" id="errortxtbox" runat="server" visible="false"/>  --%>
+            <%--<br />--%>
             
             
         </div>
@@ -58,13 +82,17 @@
         </div>
 
         <div class="button">
-            <asp:Button id="Signup_btn" Text="Sign Up" runat="server" OnClick="Signup_click"  CssClass="first"/>
+            <asp:Button id="Signup_btn" Text="Sign Up" runat="server" OnClick="Signup_click"  CssClass="first" />
+            
 
             <a href="LoginHome.aspx" class="sec" >Go Back</a>
         </div>
         </form>
-            
 
+    </div>
+
+    <div id="dialog-message" title="Uyarı !">
+        <%--<asp:Label  CssClass="errorhandling" id="errortxtbox" runat="server" visible="false"/>--%>
 
     </div>
 

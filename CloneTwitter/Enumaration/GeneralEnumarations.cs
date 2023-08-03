@@ -11,7 +11,8 @@ namespace CloneTwitter.Enumaration
         public enum Response
         {
             error = 0,
-            success = 1,
+            success = 1
+            
 
         }
 

@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="cssx/style.css" rel="stylesheet" />
     <title>Twitter,It's what's happining/twitter</title>
+
+
 </head>
 <body>
     <div class="showcase">
@@ -27,6 +29,7 @@
         <div class="log">
             <a href="Signin.aspx">Sign in</a>
         </div>  
+       
 
    </div>
       <div class="footer">        
@@ -52,6 +55,9 @@
           <p>© 2021 Twitter, Inc.</p>
          
         </div>
-        
+    
+
 </body>
+
+
 </html>

@@ -60,7 +60,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Context\COTContext.cs" />
+    <Compile Include="Model\Entity\POST.cs" />
     <Compile Include="Model\Entity\USER.cs" />
+    <Compile Include="Model\Entity\USERPERS.cs" />
+    <Compile Include="POSTDAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="USERDAL.cs" />

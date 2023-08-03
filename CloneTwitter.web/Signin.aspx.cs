@@ -29,13 +29,17 @@ namespace CloneTwitter.web
 
             if (usignResponse.Response == Enumaration.GeneralEnumarations.Response.error)
             {
-                errortxtbox.Visible = true;
-                errortxtbox.Text = string.Join(" , ", usignResponse.Notifications.Select(p => p.Message).ToList());
+                //errortxtbox.Visible = true;
+                //errortxtbox.Text = string.Join(" , \n", usignResponse.Notifications.Select(p => p.Message).ToList());
+                string error = string.Join(" , ", usignResponse.Notifications.Select(p => p.Message).ToList());
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "msgbox", "showMessageBox('" + error + "')", true);
 
             }
 
 
             if (usignResponse != null && usignResponse.ID_USER >0) {
+
+                Session["UserId"] = usignResponse.ID_USER;
                 Response.Redirect("~/FlowHome.aspx");
             }
             else

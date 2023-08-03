@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CloneTwitter.Enumaration.GeneralEnumarations;
 
 namespace CloneTwitter.Transaction
 {
@@ -16,12 +17,14 @@ namespace CloneTwitter.Transaction
 
             if (string.IsNullOrEmpty(userSigninRequest.PASSWORD))
                 userSigninResponse.Notifications.Add(new Notification(GeneralEnumarations.EnumNotificationType.Error, "Lütfen şifrenizi giriniz."));
+            
 
             if (string.IsNullOrEmpty(userSigninRequest.PUEtext))
                 userSigninResponse.Notifications.Add(new Notification(GeneralEnumarations.EnumNotificationType.Error,"Lütfen Username, Email, Phone bilgilerinizden birini giriniz."));
 
             if (userSigninResponse.Notifications.Any())
                 throw new System.Exception();
+
         }
 
         public static MessagesResponse Execute(UserSigninRequest request)

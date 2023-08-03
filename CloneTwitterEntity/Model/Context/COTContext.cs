@@ -11,7 +11,12 @@ namespace CloneTwitterEntity.Model.Context
 {
     public class COTContext : DbContext
     {
+        
         public DbSet<Entity.USER> USERS { get; set; }
+
+        public DbSet<POST> POSTS { get; set; }
+
+        public DbSet<USERPERS> USERPERSS { get; set; } 
 
     }
 

@@ -11,53 +11,26 @@ namespace CloneTwitter.web
 {
 
 
-    public partial class FlowHome
+    public partial class UserProfile
     {
 
         /// <summary>
-        /// akis control.
+        /// Name_lbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl akis;
+        protected global::System.Web.UI.WebControls.Label Name_lbl;
 
         /// <summary>
-        /// PostContent_txtbox control.
+        /// Username_lbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PostContent_txtbox;
-
-        /// <summary>
-        /// attach_button control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton attach_button;
-
-        /// <summary>
-        /// attachlink_txt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox attachlink_txt;
-
-        /// <summary>
-        /// btnSharePost control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSharePost;
+        protected global::System.Web.UI.WebControls.Label Username_lbl;
 
         /// <summary>
         /// repeaterExample control.
@@ -67,5 +40,41 @@ namespace CloneTwitter.web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater repeaterExample;
+
+        /// <summary>
+        /// ProfContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProfContainer;
+
+        /// <summary>
+        /// profPhotoUrl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox profPhotoUrl;
+
+        /// <summary>
+        /// bgPhotoUrl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox bgPhotoUrl;
+
+        /// <summary>
+        /// bgText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox bgText;
     }
 }

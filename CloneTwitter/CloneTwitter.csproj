@@ -39,13 +39,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessEntity\PersImageEntity.cs" />
+    <Compile Include="BusinessEntity\PostEntity.cs" />
     <Compile Include="BusinessEntity\SignEntity.cs" />
     <Compile Include="Enumaration\GeneralEnumarations.cs" />
     <Compile Include="Exception\ExceptionBase.cs" />
     <Compile Include="Exception\Exceptions.cs" />
+    <Compile Include="Message\GetPostMessage.cs" />
     <Compile Include="Message\Messages.cs" />
+    <Compile Include="Message\PersImgMessage.cs" />
+    <Compile Include="Message\SharePostMessage.cs" />
     <Compile Include="Message\UserSigninMessage.cs" />
     <Compile Include="Message\UserSignupMessage.cs" />
+    <Compile Include="Transaction\GetPostTransaction.cs" />
+    <Compile Include="Transaction\PersImageTransactions.cs" />
+    <Compile Include="Transaction\SharePostTransaction.cs" />
     <Compile Include="Transaction\UserSigninTransaction.cs" />
     <Compile Include="Transaction\UserSignupTransaction.cs" />
   </ItemGroup>
@@ -57,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
