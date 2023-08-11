@@ -1,5 +1,6 @@
 ﻿using CloneTwitter.Message;
 using CloneTwitter.Transaction;
+using CloneTwitter.Session;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,7 +18,6 @@ namespace CloneTwitter.web
         protected void Page_Load(object sender, EventArgs e)
         {
             
-
             if (!IsPostBack)
             {
                 DataTable dtTable = new DataTable();
@@ -37,14 +37,34 @@ namespace CloneTwitter.web
 
             attachlink_txt.Visible = false;
 
+            tweetbox_image.ImageUrl = CloneTwitter.Session.SessionHelper.GetUserPhoto(Convert.ToInt32(Session["UserId"]));
+            top_postavatar.ImageUrl = CloneTwitter.Session.SessionHelper.GetUserPhoto(Convert.ToInt32(Session["UserId"]));
+            top_postname.Text = CloneTwitter.Session.SessionHelper.GetName(Convert.ToInt32(Session["UserId"]));
+            top_postusername.Text = "@" + CloneTwitter.Session.SessionHelper.GetUserName(Convert.ToInt32(Session["UserId"]));
+
+
+            if (!IsPostBack)
+            {
+                // Örnek bir DataTable oluştur
+                DataTable dataaTable = new DataTable();
+                dataaTable.Columns.Add("ID", typeof(int));
+                dataaTable.Columns.Add("Name", typeof(string));
+                dataaTable.Rows.Add(1, "John");
+                dataaTable.Rows.Add(2, "Jane");
+                dataaTable.Rows.Add(3, "Michael");
+
+                // GridView'ı veri kaynağı olarak ayarla
+                //GridView1.DataSource = dataaTable;
+                //GridView1.DataBind();
+            }
         }
 
         protected void btnSharePost_Click(object sender, EventArgs e)
         {
             SharePostRequest sharePostRequest = new SharePostRequest();
 
-            sharePostRequest.ID_USER = 1;
-            sharePostRequest.USER_PHOTO = "https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png";
+            sharePostRequest.ID_USER = Convert.ToInt32(Session["UserId"]);
+            sharePostRequest.USER_PHOTO = CloneTwitter.Session.SessionHelper.GetUserPhoto(Convert.ToInt32(Session["UserId"]));
             sharePostRequest.POST_CONTENT = PostContent_txtbox.Text;
             sharePostRequest.POST_IMGCONTENT = attachlink_txt.Text;
 
@@ -60,7 +80,6 @@ namespace CloneTwitter.web
         protected void btnAttach_Click(object sender, EventArgs e)
         {
             attachlink_txt.Visible = true;
-
 
         }
 

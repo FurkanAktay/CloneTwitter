@@ -25,6 +25,7 @@ namespace CloneTwitter.Transaction
 
                 int postid = PostEntity.SHAREPOST(request.ID_USER,request.USER_PHOTO,request.POST_CONTENT,request.POST_IMGCONTENT);
 
+
                 return sharePostResponse;
 
             }

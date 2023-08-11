@@ -11,7 +11,7 @@ namespace CloneTwitter.web
 {
 
 
-    public partial class FlowHome
+    public partial class ChatMessage
     {
 
         /// <summary>
@@ -67,60 +67,6 @@ namespace CloneTwitter.web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl akis;
-
-        /// <summary>
-        /// tweetbox_image control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image tweetbox_image;
-
-        /// <summary>
-        /// PostContent_txtbox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PostContent_txtbox;
-
-        /// <summary>
-        /// attach_button control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton attach_button;
-
-        /// <summary>
-        /// attachlink_txt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox attachlink_txt;
-
-        /// <summary>
-        /// btnSharePost control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSharePost;
-
-        /// <summary>
-        /// repeaterExample control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repeaterExample;
 
         /// <summary>
         /// widgetspnl control.

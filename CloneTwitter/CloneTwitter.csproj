@@ -45,12 +45,15 @@
     <Compile Include="Enumaration\GeneralEnumarations.cs" />
     <Compile Include="Exception\ExceptionBase.cs" />
     <Compile Include="Exception\Exceptions.cs" />
+    <Compile Include="Message\GetPersImgMessage.cs" />
     <Compile Include="Message\GetPostMessage.cs" />
     <Compile Include="Message\Messages.cs" />
     <Compile Include="Message\PersImgMessage.cs" />
     <Compile Include="Message\SharePostMessage.cs" />
     <Compile Include="Message\UserSigninMessage.cs" />
     <Compile Include="Message\UserSignupMessage.cs" />
+    <Compile Include="Session\SessionHelper.cs" />
+    <Compile Include="Transaction\GetPersImgTransaction.cs" />
     <Compile Include="Transaction\GetPostTransaction.cs" />
     <Compile Include="Transaction\PersImageTransactions.cs" />
     <Compile Include="Transaction\SharePostTransaction.cs" />
@@ -66,6 +69,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

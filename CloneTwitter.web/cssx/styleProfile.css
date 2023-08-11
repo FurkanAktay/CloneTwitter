@@ -127,19 +127,19 @@ body {
     }
 
 .tweetbox__input {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5lIw4FZ_UL38X85GgNDRTpGCNjYjsFg_XYA&usqp=CAU");
     display: flex;
     padding: 20px;
     min-height: 250px;
+    background-color: #95d9f3;
 }
 
-    .tweetbox__input input {
-        flex: 1;
-        margin-left: 20px;
-        font-size: 20px;
-        border: none;
-        outline: none;
-    }
+.tweetbox__input input {
+    flex: 1;
+    margin-left: 20px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
 
 .tweetBox__tweetButton {
     background-color: var(--twitter-color);
@@ -324,10 +324,10 @@ body {
 
 
 
-    .widgets__widgetContainer h2 {
-        font-size: 18px;
-        font-weight: 800;
-    }
+.widgets__widgetContainer h2 {
+    font-size: 18px;
+    font-weight: 800;
+}
 
 .newPpUrl {
     float: left;
@@ -336,7 +336,7 @@ body {
     min-width: 300px;
     border: none;
     margin-top: 5px;
-    margin-bottom 20px;
+    margin-bottom: 20px;
 }
 
 .newbgPhotoUrl {
@@ -346,7 +346,7 @@ body {
     min-width: 300px;
     border: none;
     margin-top: 5px;
-    margin-bottom 20px;
+    margin-bottom: 20px;
 }
 
 .newbgText {
@@ -356,11 +356,21 @@ body {
     min-width: 300px;
     border: none;
     margin-top: 5px;
-    margin-bottom 20px;
+    margin-bottom: 20px;
 }
 
-.savebtn{
-    margin-top:30px;
-    background-color: #808080;
-    border:none;
+.savebtn {
+    margin-top: 30px;
+    border: none;
+    background-color: #969696cc;
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: auto;
+    float: right;
+    margin-right: 15px;
 }

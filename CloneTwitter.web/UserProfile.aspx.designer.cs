@@ -15,22 +15,49 @@ namespace CloneTwitter.web
     {
 
         /// <summary>
-        /// Name_lbl control.
+        /// prof_head control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Name_lbl;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prof_head;
 
         /// <summary>
-        /// Username_lbl control.
+        /// top_postavatar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Username_lbl;
+        protected global::System.Web.UI.WebControls.Image top_postavatar;
+
+        /// <summary>
+        /// top_postname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label top_postname;
+
+        /// <summary>
+        /// top_postusername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label top_postusername;
+
+        /// <summary>
+        /// repeaterprofile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeaterprofile;
 
         /// <summary>
         /// repeaterExample control.
@@ -51,30 +78,30 @@ namespace CloneTwitter.web
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProfContainer;
 
         /// <summary>
-        /// profPhotoUrl control.
+        /// profPhotoUrl_txtbox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox profPhotoUrl;
+        protected global::System.Web.UI.WebControls.TextBox profPhotoUrl_txtbox;
 
         /// <summary>
-        /// bgPhotoUrl control.
+        /// bgPhotoUrl_txtbox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox bgPhotoUrl;
+        protected global::System.Web.UI.WebControls.TextBox bgPhotoUrl_txtbox;
 
         /// <summary>
-        /// bgText control.
+        /// bgText_txtbox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox bgText;
+        protected global::System.Web.UI.WebControls.TextBox bgText_txtbox;
     }
 }

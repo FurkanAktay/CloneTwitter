@@ -2,6 +2,7 @@
 using CloneTwitterEntity.Model.Entity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,23 @@ namespace CloneTwitterEntity
             using (COTContext Veri = new COTContext())
             {
               return  Veri.POSTS.Where(p => p.ID_USER == userId).ToList();
+
+            }
+        }
+
+        public static void POSTUPCHANGE(int userid,string usernewphoto)
+        {
+            using (COTContext Veri = new COTContext())
+            {
+                var posts = Veri.POSTS.Where(u => u.ID_USER == userid);
+
+                
+                foreach (var post in posts)
+                {
+                    post.USER_PHOTO = usernewphoto;
+                }
+                Veri.SaveChanges();
+
 
             }
         }

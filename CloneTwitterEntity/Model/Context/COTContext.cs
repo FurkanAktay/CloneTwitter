@@ -18,6 +18,10 @@ namespace CloneTwitterEntity.Model.Context
 
         public DbSet<USERPERS> USERPERSS { get; set; } 
 
+        public DbSet<POSTINT> POSTINTS { get; set; }    
+
+        public DbSet<POSTINTDETA> POSTINTSDETAS { get; set;}
+
     }
 
     

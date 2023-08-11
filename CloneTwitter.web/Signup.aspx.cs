@@ -40,7 +40,9 @@ namespace CloneTwitter.web
                 //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + errortxtbox.Text + "');", true);
 
             }
-            
+
+
+
         }
     }
 }

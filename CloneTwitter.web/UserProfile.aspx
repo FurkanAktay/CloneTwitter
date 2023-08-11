@@ -23,13 +23,13 @@
     <div class="sidebar">
         <i class="fab fa-twitter"></i>
 
-        <div class="post__avatar">
-            <img
-                src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                alt="" />
+        <div class="post__avatar" id="prof_head" runat="server">
+            <asp:Image ID="top_postavatar" runat="server" />
             <br />
-            <h3>FURKAN AKTAY</h3>
-            <h4>@furkann</h4>
+
+            <asp:Label ID="top_postname" runat="server" Style="font-weight: bold; font-size: xx-large" />
+            <asp:Label ID="top_postusername" runat="server" Style="font-size: x-large" />
+
 
         </div>
 
@@ -50,7 +50,7 @@
 
         <div class="sidebarOption">
             <span class="material-icons">mail_outline </span>
-            <h2>Messages</h2>
+            <h2><a href="ChatMessage.aspx" style="text-decoration:none">Messages</a></h2>
         </div>
 
         <div class="sidebarOption">
@@ -70,7 +70,7 @@
 
         <div class="sidebarOption">
             <span class="material-icons">more_horiz </span>
-            <h2>More</h2>
+            <h2><a href="LoginHome.aspx" style="text-decoration: none">Sign Out</a></h2>
         </div>
         <button class="sidebar__tweet">Tweet</button>
     </div>
@@ -83,45 +83,44 @@
         </div>
 
         <!-- profilebox starts -->
-        <div class="tweetBox">
-            <%--<form runat="server">--%>
-            <div class="tweetbox__input">
-                <table>
-                    <tr>
-                        <td style="width: 20%; padding-right: 20px;">
-                            <img style="width: 150px; height: 150px;" class="profile_avatar" src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                                alt="" />
-                        </td>
-                        <td style="width: 75%;">
-                            <asp:Label class="Namelbl" runat="server" type="text" Text="FURKAN AKTAY" ID="Name_lbl" />
+        <%--<%#Eval("ProfileBgPic")%>   CssClass="tweetBox" style="background-image: url(<%#Eval("ProfileBgPic")%>));"   --%>
+        <asp:Repeater runat="server" ID="repeaterprofile">
+            <ItemTemplate>
+                <div class="tweetBox" id="profilebox">
+                    <div class="tweetbox__input">
+                        <%--<asp:Image ImageUrl='<%#Eval("ProfileBgPic") %>' runat="server" z-index="999" />--%>
+                        <table>
+                            <tr>
+                                <td style="width: 20%; padding-right: 20px;">
 
-                            <asp:Label class="Usernamelbl" runat="server" type="text" Text="@furkann" ID="Username_lbl" />
-                        </td>
-                        <td style="width: 5%;"></td>
-                    </tr>
+                                    <asp:Image ImageUrl='<%#Eval("ProfilePic") %>' runat="server" Style="width: 150px; height: 150px;" class="profile_avatar" />
 
-                    <tr>
-                        <td></td>
-                        <td style="width: 90%; max-width: 300px;">
-                            <h4 class="biography">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</h4>
-                        </td>
-                        <td cssclass="add_photo" style="width: 10%;">
+                                </td>
+                                <td style="width: 75%;">
 
-                            <%--<button id="image_button" class="profileBox__imageButton" onclick="btnProfileSettings_Click()">
-                                <span class="material-symbols-outlined">settings_account_box</span>
-                            </button>--%>
+                                    <%-- <asp:Label id="top_profilename" runat="server" style="font-weight:bold;font-size:xx-large"/>
+                                    <asp:Label id="top_profileusername" runat="server" style="font-size:x-large"/>  --%>
+                                    <h3>Furkan Aktay</h3>
+                                    <h4>@frknn</h4>
 
-                            <%--<asp:LinkButton ID="image_button" CssClass="profileBox__imageButton" runat="server" OnClick="btnProfileSettings_Click">
-                                <span class="material-symbols-outlined" >settings_account_box</span>
-                            </asp:LinkButton>--%>
+                                </td>
+                                <td style="width: 5%;"></td>
+                            </tr>
 
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <%--</form>--%>
-        </div>
-        <!-- profilebox ends -->
+                            <tr>
+                                <td></td>
+                                <td style="width: 90%; max-width: 300px;">
+                                    <asp:Label runat="server" Text='<%#Eval("ProfileBio")%>' />
+                                </td>
+                                <td cssclass="add_photo" style="width: 10%;"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+
+
 
         <%--REPEATER ILE YAPILMIS POST START --%>
         <asp:Repeater ID="repeaterExample" runat="server">
@@ -132,9 +131,8 @@
 
                             <tr>
                                 <td style="width: 10%;">
-                                    <div class="post__avatar">
+                                    <div class="post__avatar" id="post_avatar" runat="server">
                                         <asp:Image ID="PostAvatar_img" type="text" ImageUrl='<%#Eval("User_Photo")%>' runat="server" />
-
                                     </div>
                                 </td>
                                 <td style="width: 80%">
@@ -183,9 +181,19 @@
                                 <td style="width: 10%;"></td>
                                 <td style="width: 80%;">
                                     <div class="post__footer">
+                                        <%--<asp:LinkButton ID="repeat_postbtn" runat="server"> 
+                                                <span class="material-icons">repeat </span>
+                                            </asp:LinkButton>
+                                            <asp:LinkButton ID="fav_postbtn" runat="server"> 
+                                                <span class="material-icons">favorite_border </span>
+                                            </asp:LinkButton>
+                                            <asp:LinkButton ID="publish_postbtn" runat="server"> 
+                                                <span class="material-icons">publish </span>
+                                            </asp:LinkButton>        --%>
                                         <span class="material-icons">repeat </span>
                                         <span class="material-icons">favorite_border </span>
                                         <span class="material-icons">publish </span>
+
                                     </div>
                                 </td>
                                 <td style="width: 10%;"></td>
@@ -225,9 +233,20 @@
                     src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
                     alt="" />
                 <div class="post__footer">
+                    <%--                    <asp:LinkButton runat="server"> 
+                                <span class="material-icons">repeat </span>
+                        </asp:LinkButton>
+                        <asp:LinkButton runat="server"> 
+                                <span class="material-icons">favorite_border </span>
+                        </asp:LinkButton>
+                        <asp:LinkButton runat="server"> 
+                                <span class="material-icons">publish </span>
+                        </asp:LinkButton>--%>
+
                     <span class="material-icons">repeat </span>
                     <span class="material-icons">favorite_border </span>
                     <span class="material-icons">publish </span>
+
                 </div>
             </div>
         </div>
@@ -293,28 +312,28 @@
         <%--add photo--%>
         <div runat="server" class="widgets__widgetContainer" id="ProfContainer">
             <button id="image_button" class="profileBox__imageButton">
-                        <span class="material-symbols-outlined">settings_account_box</span>
-                    </button>
+                <span class="material-symbols-outlined">settings_account_box</span>
+            </button>
             <div class="widgets__profSettings">
                 <form runat="server">
 
                     <h2>Enter your new profile photo url: </h2>
 
-                    <asp:TextBox runat="server" CssClass="newPpUrl" type="Text" ID="profPhotoUrl" PlaceHolder="Enter your new profile photo url here." />
+                    <asp:TextBox runat="server" CssClass="newPpUrl" type="Text" ID="profPhotoUrl_txtbox" PlaceHolder="Enter your new profile photo url here." />
 
                     <h2>Enter your new background photo url: </h2>
 
-                    <asp:TextBox runat="server" CssClass="newbgPhotoUrl" type="Text" ID="bgPhotoUrl" PlaceHolder="Enter your new background photo url here." />
+                    <asp:TextBox runat="server" CssClass="newbgPhotoUrl" type="Text" ID="bgPhotoUrl_txtbox" PlaceHolder="Enter your new background photo url here." />
 
                     <h2>Enter your new biography text: </h2>
 
-                    <asp:TextBox runat="server" CssClass="newbgText" type="Text" ID="bgText" PlaceHolder="Enter your new biography text here." />
+                    <asp:TextBox runat="server" CssClass="newbgText" type="Text" ID="bgText_txtbox" PlaceHolder="Enter your new biography text here." />
 
                     <table>
                         <tr>
                             <td style="width: 50%;"></td>
                             <td style="width: 50%;">
-                                <asp:Button runat="server" Text="Save" CssClass="savebtn" />
+                                <asp:Button runat="server" Text="Save" CssClass="savebtn" OnClick="Savebtn_Click" />
                             </td>
                         </tr>
 

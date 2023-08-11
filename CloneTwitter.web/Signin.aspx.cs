@@ -32,7 +32,7 @@ namespace CloneTwitter.web
                 //errortxtbox.Visible = true;
                 //errortxtbox.Text = string.Join(" , \n", usignResponse.Notifications.Select(p => p.Message).ToList());
                 string error = string.Join(" , ", usignResponse.Notifications.Select(p => p.Message).ToList());
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "msgbox", "showMessageBox('" + error + "')", true);
+                //Page.ClientScript.RegisterStartupScript(this.GetType(), "msgbox", "showMessageBox('" + error + "')", true);
 
             }
 
@@ -40,6 +40,10 @@ namespace CloneTwitter.web
             if (usignResponse != null && usignResponse.ID_USER >0) {
 
                 Session["UserId"] = usignResponse.ID_USER;
+                
+
+                HttpContext.Current.Session["UserIdSession"] = Session["UserId"];
+
                 Response.Redirect("~/FlowHome.aspx");
             }
             else

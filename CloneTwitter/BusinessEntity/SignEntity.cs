@@ -26,7 +26,7 @@ namespace CloneTwitter.BusinessEntity
                 USERDAL.UserAdd(tbluser);
 
             }
-            catch (System.Exception ex)
+            catch (System.Exception)
             {
 
                 throw;

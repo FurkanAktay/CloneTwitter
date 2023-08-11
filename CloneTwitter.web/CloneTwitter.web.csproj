@@ -109,6 +109,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChatMessage.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -200,6 +201,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ChatMessage.aspx.cs">
+      <DependentUpon>ChatMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChatMessage.aspx.designer.cs">
+      <DependentUpon>ChatMessage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FlowHome.aspx.cs">
       <DependentUpon>FlowHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

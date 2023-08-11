@@ -52,6 +52,8 @@ namespace CloneTwitter.Transaction
 
                 int userid = SignEntity.USERADD(request.NAME, request.PHONE, request.EMAIL, request.USERNAME, request.PASSWORD);
 
+                PersImageEntity.USERPERSIMGADD(userid, "https://st3.depositphotos.com/19428878/36416/v/450/depositphotos_364169666-stock-illustration-default-avatar-profile-icon-vector.jpg","","");
+
                 return userSaveResponse;
 
             }

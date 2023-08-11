@@ -2,9 +2,13 @@
 using CloneTwitterEntity.Model.Entity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Collections.Specialized.BitVector32;
 
 namespace CloneTwitterEntity
 {
@@ -84,6 +88,91 @@ namespace CloneTwitterEntity
             }
 
         }
+
+        public static void UserPersImgUpdate(USERPERS tbluserpersimg)
+        {
+            using (COTContext Veri = new COTContext())
+            {
+                var exist = Veri.USERPERSS.SingleOrDefault(u=>u.UserID==tbluserpersimg.UserID);
+
+                if (exist != null)
+                {
+                    exist.ProfilePic = tbluserpersimg.ProfilePic;
+                    exist.ProfileBgPic = tbluserpersimg.ProfileBgPic;
+                    exist.ProfileBio = tbluserpersimg.ProfileBio;
+
+                    Veri.SaveChanges() ;
+                }
+                else
+                {
+
+                    USERPERS yeniKullaniciMedia = new USERPERS
+                    {
+                        UserID = tbluserpersimg.UserID,
+                        ProfilePic = tbluserpersimg.ProfilePic,
+                        ProfileBgPic = tbluserpersimg.ProfileBgPic,
+                        ProfileBio = tbluserpersimg.ProfileBio
+                    };
+                    Veri.USERPERSS.Add(yeniKullaniciMedia);
+                    Veri.SaveChanges();
+                    tbluserpersimg.UserPersId = yeniKullaniciMedia.UserPersId;
+                }
+
+
+            }
+
+        }
+
+        public static List<USERPERS> GETPIMG(int userId)
+        {
+            using (COTContext Veri = new COTContext())
+            {
+                return Veri.USERPERSS.Where(p => p.UserID == userId).ToList();
+
+            }
+        }
+
+        public static string  USERGETPIMG(int userId)
+        {
+            using (COTContext Veri = new COTContext())
+            {
+                return Convert.ToString(Veri.USERPERSS.Where(p => p.UserID == userId).Select(p => p.ProfilePic).FirstOrDefault());
+
+            }
+        }
+
+        public static string USERGETUSERNAME(int userId)
+        {
+            using (COTContext Veri = new COTContext())
+            {
+                return Convert.ToString(Veri.USERS.Where(p => p.ID_USER == userId).Select(p => p.USERNAME).FirstOrDefault());
+
+            }
+        }
+        public static string USERGETNAME(int userId)
+        {
+            using (COTContext Veri = new COTContext())
+            {
+                return Convert.ToString(Veri.USERS.Where(p => p.ID_USER == userId).Select(p => p.NAME).FirstOrDefault());
+
+            }
+        }
+
+        public static USERPERS UserPersImgDondur(USERPERS tbluserpers)
+        {
+            using (COTContext Veri = new COTContext())
+            {
+
+                // var test = Veri.USERS.Where(x => (x.ID_USER == Convert.ToInt32(Session["UserId"])));
+
+
+                var userimgsave = Veri.USERPERSS.Where(x => (x.UserID == tbluserpers.UserID)).Select(x => x).FirstOrDefault();
+
+                return userimgsave;
+            }
+
+        }
+
 
 
     }

@@ -61,6 +61,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Context\COTContext.cs" />
     <Compile Include="Model\Entity\POST.cs" />
+    <Compile Include="Model\Entity\POSTINT.cs" />
+    <Compile Include="Model\Entity\POSTINTDETA.cs" />
     <Compile Include="Model\Entity\USER.cs" />
     <Compile Include="Model\Entity\USERPERS.cs" />
     <Compile Include="POSTDAL.cs" />
