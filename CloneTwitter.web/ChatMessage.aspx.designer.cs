@@ -15,15 +15,6 @@ namespace CloneTwitter.web
     {
 
         /// <summary>
-        /// sidebarpnl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel sidebarpnl;
-
-        /// <summary>
         /// top_postavatar control.
         /// </summary>
         /// <remarks>
@@ -51,15 +42,6 @@ namespace CloneTwitter.web
         protected global::System.Web.UI.WebControls.Label top_postusername;
 
         /// <summary>
-        /// Panel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
-
-        /// <summary>
         /// akis control.
         /// </summary>
         /// <remarks>
@@ -67,14 +49,5 @@ namespace CloneTwitter.web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl akis;
-
-        /// <summary>
-        /// widgetspnl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel widgetspnl;
     }
 }

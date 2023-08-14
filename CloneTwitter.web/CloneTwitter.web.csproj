@@ -128,7 +128,8 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="cssx\style.css" />
-    <Content Include="cssx\styleFlow.css" />
+    <Content Include="cssx\StyleChatMessage.css" />
+    <Content Include="cssx\StyleFlow.css" />
     <Content Include="cssx\styleProfile.css" />
     <Content Include="cssx\styleSignin.css" />
     <Content Include="cssx\styleSignup.css" />

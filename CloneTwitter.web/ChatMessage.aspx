@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Twitter Clone - Final</title>
-    <link href="cssx/styleFlow.css" rel="stylesheet" />
+    <link href="cssx/StyleChatMessage.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link
@@ -30,7 +30,6 @@
 <body>
     <%--<form runat="server">--%>
     <!-- sidebar starts -->
-    <asp:Panel ID="sidebarpnl" CssClass="sidebar" runat="server" Width="100px">
         <div class="sidebar">
             <i class="fab fa-twitter"></i>
             <div class="post__avatar">
@@ -86,11 +85,9 @@
             </div>
             <button class="sidebar__tweet">Tweet</button>
         </div>
-    </asp:Panel>
     <!-- sidebar ends -->
 
     <!-- feed starts -->
-    <asp:Panel ID="Panel1" CssClass="feed" runat="server" Width="100px">
         <div id="akis" class="feed" runat="server">
             <div class="feed__header">
                 <h2>Messages</h2>
@@ -108,11 +105,9 @@
 
 
         </div>
-    </asp:Panel>
     <!-- feed ends -->
 
     <!-- widgets starts -->
-    <asp:Panel ID="widgetspnl" CssClass="widgets" runat="server" Width="100px">
         <div class="widgets">
             <div class="widgets__input">
                 <span class="material-icons widgets__searchIcon">search </span>
@@ -151,7 +146,6 @@
 
 
         </div>
-    </asp:Panel>
     <!-- widgets ends -->
 
     <%--    </form>--%>
