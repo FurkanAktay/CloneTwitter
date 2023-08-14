@@ -2,6 +2,8 @@
 using CloneTwitterEntity.Model.Entity;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Migrations;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
@@ -32,7 +34,7 @@ namespace CloneTwitterEntity
                 tbluser.ID_USER = yeniKullanici.ID_USER;
 
 
-            } 
+            }
 
         }
 
@@ -41,7 +43,7 @@ namespace CloneTwitterEntity
             using (COTContext Veri = new COTContext())
             {
 
-                var usersign = Veri.USERS.Where(x => (x.USERNAME == tbluser.USERNAME || x.EMAIL == tbluser.EMAIL || x.PHONE == tbluser.PHONE) ).Select(x => x).FirstOrDefault();
+                var usersign = Veri.USERS.Where(x => (x.USERNAME == tbluser.USERNAME || x.EMAIL == tbluser.EMAIL || x.PHONE == tbluser.PHONE)).Select(x => x).FirstOrDefault();
 
                 return usersign;
             }
@@ -50,19 +52,19 @@ namespace CloneTwitterEntity
         public static USER UserSign(USER tbluser)
         {
             var usersign = USERDONDUR(tbluser);
-            if (usersign == null) 
+            if (usersign == null)
             {
-                return null;            
+                return null;
             }
 
 
-            if (usersign.PASSWORD==tbluser.PASSWORD)
+            if (usersign.PASSWORD == tbluser.PASSWORD)
             {
                 return usersign;
 
             }
 
-            return null;   
+            return null;
 
 
         }
@@ -93,7 +95,7 @@ namespace CloneTwitterEntity
         {
             using (COTContext Veri = new COTContext())
             {
-                var exist = Veri.USERPERSS.SingleOrDefault(u=>u.UserID==tbluserpersimg.UserID);
+                var exist = Veri.USERPERSS.SingleOrDefault(u => u.UserID == tbluserpersimg.UserID);
 
                 if (exist != null)
                 {
@@ -101,7 +103,7 @@ namespace CloneTwitterEntity
                     exist.ProfileBgPic = tbluserpersimg.ProfileBgPic;
                     exist.ProfileBio = tbluserpersimg.ProfileBio;
 
-                    Veri.SaveChanges() ;
+                    Veri.SaveChanges();
                 }
                 else
                 {
@@ -123,16 +125,48 @@ namespace CloneTwitterEntity
 
         }
 
-        public static List<USERPERS> GETPIMG(int userId)
+        public static List<JOIN_USERPERSUSER> GETPIMG(int userId)
         {
             using (COTContext Veri = new COTContext())
             {
-                return Veri.USERPERSS.Where(p => p.UserID == userId).ToList();
+               
+                  
+                    var result= Veri.USERPERSS
+                    .Join(Veri.USERS,
+                    n => n.UserID,
+                    p => p.ID_USER,
+                    (n, p) => new
+                    {
+                        UserId = n.UserID,
+                        UserName = p.USERNAME,
+                        Name = p.NAME,
+                        ProfilePic = n.ProfilePic,
+                        ProfileBgPic = n.ProfileBgPic,
+                        ProfileBio = n.ProfileBio
+                    }).Where(z => z.UserId == userId).ToList();
+
+                List<JOIN_USERPERSUSER> ResultList = new List<JOIN_USERPERSUSER>() ;
+                foreach (var item in result)
+                {
+                    ResultList.Add(new JOIN_USERPERSUSER()
+                    {
+                        UserId = item.UserId,
+                        UserName = item.UserName,
+                        Name = item.Name,
+                        ProfilePic = item.ProfilePic,
+                        ProfileBgPic = item.ProfileBgPic,
+                        ProfileBio = item.ProfileBio
+                    });
+                }
+
+                return ResultList;
+
 
             }
+
         }
 
-        public static string  USERGETPIMG(int userId)
+        public static string USERGETPIMG(int userId)
         {
             using (COTContext Veri = new COTContext())
             {

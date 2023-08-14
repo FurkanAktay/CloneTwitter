@@ -135,6 +135,7 @@
     <Content Include="cssx\styleSignup.css" />
     <Content Include="favicon.ico" />
     <Content Include="FlowHome.aspx" />
+    <Content Include="FlowTrends.ascx" />
     <Content Include="Global.asax" />
     <Content Include="LoginHome.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -215,6 +216,13 @@
     </Compile>
     <Compile Include="FlowHome.aspx.designer.cs">
       <DependentUpon>FlowHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FlowTrends.ascx.cs">
+      <DependentUpon>FlowTrends.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlowTrends.ascx.designer.cs">
+      <DependentUpon>FlowTrends.ascx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

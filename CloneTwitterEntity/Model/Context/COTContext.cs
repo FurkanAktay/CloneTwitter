@@ -22,6 +22,7 @@ namespace CloneTwitterEntity.Model.Context
 
         public DbSet<POSTINTDETA> POSTINTSDETAS { get; set;}
 
+
     }
 
     

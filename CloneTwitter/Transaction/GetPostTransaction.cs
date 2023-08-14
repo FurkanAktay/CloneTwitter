@@ -40,6 +40,8 @@ namespace CloneTwitter.Transaction
 
                 dataTable.Columns.Add("PostId", typeof(int));
                 dataTable.Columns.Add("UserId", typeof(int));
+                dataTable.Columns.Add("Name", typeof(string));
+                dataTable.Columns.Add("UserName", typeof(string));
                 dataTable.Columns.Add("User_Photo", typeof(string));
                 dataTable.Columns.Add("Post_Content", typeof(string));
                 dataTable.Columns.Add("Post_imgcontent", typeof(string));
@@ -47,11 +49,13 @@ namespace CloneTwitter.Transaction
 
                 getPost.Aggregate(dataTable, (d, r) =>
                 {
-                    d.Rows.Add(r.ID_POST,
-                               r.ID_USER,
-                               string.IsNullOrEmpty(r.USER_PHOTO) ? string.Empty : r.USER_PHOTO,
-                               string.IsNullOrEmpty(r.POST_CONTENT) ? string.Empty : r.POST_CONTENT,
-                               string.IsNullOrEmpty(r.POST_IMGCONTENT) ? string.Empty : r.POST_IMGCONTENT
+                    d.Rows.Add(r.PostId,
+                               r.UserId,
+                               r.Name,
+                               r.UserName,
+                               string.IsNullOrEmpty(r.UserPhoto) ? string.Empty : r.UserPhoto,
+                               string.IsNullOrEmpty(r.PostContent) ? string.Empty : r.PostContent,
+                               string.IsNullOrEmpty(r.PostImgContent) ? string.Empty : r.PostImgContent
                                ); return d;
                 });
 

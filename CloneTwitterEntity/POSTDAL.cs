@@ -28,11 +28,41 @@ namespace CloneTwitterEntity
             }
         }
 
-        public static List<POST> GETPOST(int userId)
+        public static List<JOIN_USERPOST> GETPOST(int userId)
         {
             using (COTContext Veri = new COTContext())
             {
-              return  Veri.POSTS.Where(p => p.ID_USER == userId).ToList();
+                var result = Veri.POSTS
+                    .Join(Veri.USERS,
+                    n=> n.ID_USER,
+                    p=>p.ID_USER,
+                    (n,p)=> new
+                    {
+                        PostId = n.ID_POST,
+                        UserId = n.ID_USER,
+                        Name = p.NAME,
+                        UserName = p.USERNAME,
+                        UserPhoto  = n.USER_PHOTO,
+                        PostContent = n.POST_CONTENT,
+                        PostImgContent = n.POST_IMGCONTENT,
+                    }).Where(p => p.UserId == userId).ToList();
+
+                List<JOIN_USERPOST> ResultList = new List<JOIN_USERPOST>();
+                foreach (var item in result)
+                {
+                    ResultList.Add(new JOIN_USERPOST()
+                    {
+                        PostId = item.PostId,
+                        UserId = item.UserId,
+                        Name = item.Name,
+                        UserName = item.UserName,
+                        UserPhoto = item.UserPhoto,
+                        PostContent = item.PostContent,
+                        PostImgContent = item.PostImgContent,
+                    });
+                }
+
+                return ResultList;
 
             }
         }

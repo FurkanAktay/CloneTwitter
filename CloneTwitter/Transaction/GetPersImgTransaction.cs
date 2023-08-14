@@ -31,16 +31,18 @@ namespace CloneTwitter.Transaction
 
                 DataTable dataTable = new DataTable();
 
-                dataTable.Columns.Add("UserPersId", typeof(int));
-                dataTable.Columns.Add("UserID", typeof(int));
+                dataTable.Columns.Add("UserId", typeof(int));
+                dataTable.Columns.Add("UserName", typeof(string));
+                dataTable.Columns.Add("Name", typeof(string));
                 dataTable.Columns.Add("ProfilePic", typeof(string));
                 dataTable.Columns.Add("ProfileBgPic", typeof(string));
                 dataTable.Columns.Add("ProfileBio", typeof(string));
 
                 getUserImg.Aggregate(dataTable, (d, r) =>
                 {
-                    d.Rows.Add(r.UserPersId,
-                               r.UserID,
+                    d.Rows.Add(r.UserId,
+                               r.UserName,
+                               r.Name,
                                string.IsNullOrEmpty(r.ProfilePic) ? string.Empty : r.ProfilePic,
                                string.IsNullOrEmpty(r.ProfileBgPic) ? string.Empty : r.ProfileBgPic,
                                string.IsNullOrEmpty(r.ProfileBio) ? string.Empty : r.ProfileBio

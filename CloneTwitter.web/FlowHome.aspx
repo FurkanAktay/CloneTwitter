@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FlowHome.aspx.cs" Inherits="CloneTwitter.web.FlowHome" %>
 
+<%@ Register Src="~/FlowTrends.ascx" TagPrefix="uc1" TagName="FlowTrends" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +40,7 @@
             <asp:Image ID="top_postavatar" runat="server" />
             <br />
             <asp:Label ID="top_postname" runat="server" Style="font-weight: bold; font-size: xx-large" />
-            <asp:Label ID="top_postusername" runat="server" Style="font-size: x-large" />
+            <asp:Label ID="top_postusername" runat="server" Style="font-size: x-large;font-style:italic;font-weight:600 " />
 
         </div>
 
@@ -136,9 +139,9 @@
                                     <div class="post__header">
                                         <div class="post__headerText">
                                             <asp:Label ID="PostHeader_lbl" runat="server"> 
-                                                <h3>  <%--<%#Eval("Name")%>--%>
-                                                    <span class="post__headerSpecial"><span class="material-icons post__badge">verified </span>@furkann</span>
-                                                </h3>
+                                                <h3><%#Eval("Name")%>
+                                                    <span class="post__headerSpecial"><span class="material-icons post__badge">verified </span>@<%#Eval("UserName")%></span>
+                                                </h3> 
                                             </asp:Label>
 
                                         </div>
@@ -275,6 +278,9 @@
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
 
+        <div>
+            <uc1:FlowTrends runat="server" id="FlowTrends" />
+        </div>
 
         <%--<table>
             <tr>

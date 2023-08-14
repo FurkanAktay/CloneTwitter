@@ -28,7 +28,7 @@
             <br />
 
             <asp:Label ID="top_postname" runat="server" Style="font-weight: bold; font-size: xx-large" />
-            <asp:Label ID="top_postusername" runat="server" Style="font-size: x-large" />
+            <asp:Label ID="top_postusername" runat="server" Style="font-size: x-large ;font-style:italic;font-weight:600" />
 
 
         </div>
@@ -83,12 +83,10 @@
         </div>
 
         <!-- profilebox starts -->
-        <%--<%#Eval("ProfileBgPic")%>   CssClass="tweetBox" style="background-image: url(<%#Eval("ProfileBgPic")%>));"   --%>
         <asp:Repeater runat="server" ID="repeaterprofile">
             <ItemTemplate>
                 <div class="tweetBox" id="profilebox">
-                    <div class="tweetbox__input">
-                        <%--<asp:Image ImageUrl='<%#Eval("ProfileBgPic") %>' runat="server" z-index="999" />--%>
+                    <div class="tweetbox__input" style="background-image:url('<%#Eval("ProfileBgPic") %>')" >
                         <table>
                             <tr>
                                 <td style="width: 20%; padding-right: 20px;">
@@ -97,16 +95,12 @@
 
                                 </td>
                                 <td style="width: 75%;">
-
-                                    <%-- <asp:Label id="top_profilename" runat="server" style="font-weight:bold;font-size:xx-large"/>
-                                    <asp:Label id="top_profileusername" runat="server" style="font-size:x-large"/>  --%>
-                                    <h3>Furkan Aktay</h3>
-                                    <h4>@frknn</h4>
+                                    <h1><%#Eval("Name")%></h1>
+                                    <h3 style="font-weight:600;font-style:italic">@<%#Eval("UserName") %></h3>
 
                                 </td>
                                 <td style="width: 5%;"></td>
                             </tr>
-
                             <tr>
                                 <td></td>
                                 <td style="width: 90%; max-width: 300px;">
@@ -139,9 +133,9 @@
                                     <div class="post__header">
                                         <div class="post__headerText">
                                             <asp:Label ID="PostHeader_lbl" runat="server"> 
-                                                <h3> FURKAN AKTAY <%--<%#Eval("Name")%>--%>
-                                                    <span class="post__headerSpecial"><span class="material-icons post__badge">verified </span>@furkann</span>
-                                                </h3>
+                                                <h3><%#Eval("Name")%>
+                                                    <span class="post__headerSpecial"><span class="material-icons post__badge">verified </span>@<%#Eval("UserName")%></span>
+                                                </h3> 
                                             </asp:Label>
 
                                         </div>

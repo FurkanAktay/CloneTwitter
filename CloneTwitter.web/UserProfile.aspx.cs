@@ -55,9 +55,7 @@ namespace CloneTwitter.web
             top_postavatar.ImageUrl = CloneTwitter.Session.SessionHelper.GetUserPhoto(Convert.ToInt32(Session["UserId"]));
             top_postname.Text = CloneTwitter.Session.SessionHelper.GetName(Convert.ToInt32(Session["UserId"]));
             top_postusername.Text = "@" +  CloneTwitter.Session.SessionHelper.GetUserName(Convert.ToInt32(Session["UserId"]));
-            
-            //top_profilename.Text = "1";
-            //top_profileusername.Text = "2";
+
 
         }
 

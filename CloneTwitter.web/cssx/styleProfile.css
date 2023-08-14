@@ -130,7 +130,6 @@ body {
     display: flex;
     padding: 20px;
     min-height: 250px;
-    background-color: #95d9f3;
 }
 
 .tweetbox__input input {
